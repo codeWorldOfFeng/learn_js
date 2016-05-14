@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>blank</title>
+		<meta name="author" content="feng_Pc" />
+		<!-- Date: 2016-03-15 -->
+		<script src="feng.learn.utils/ClientDetect.js"></script>
+	</head>
+	<body>
+		<a href="#">dfddfsadfasd</a>
+		<div class="class122 class23 class3 class4" id="div" name="name333">
+			dfdf
+			<div>1</div>
+			<div>2</div>
+			<span id="span1">dd</span>
+		</div>
+		<p>pppppp</p>
+		<script type="text/javascript">
+			var divNode=document.getElementById("div");  //Element nodeType=1
+			var divNodeDuplicate1=divNode.cloneNode(true); //复制子节点，复制属性
+			var divNodeDuplicate2=divNode.cloneNode(false); //不复制子节点，但复制属性
+			var textNode=divNode.firstChild; //Text nodeType=3
+			var attNode=divNode.attributes.item(1); //Attr nodeType=2
+			console.info(divNode);
+		</script>
+	</body>
+</html>
+

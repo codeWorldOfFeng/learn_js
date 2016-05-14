@@ -1,0 +1,98 @@
+[
+	{
+		"title": "科达用户域",
+		"isFolder": true,
+		"open": true,
+		"addClass": "userDomainIco",
+		"children": [
+			{
+				"title": "大客户部门",
+				"isFolder": true
+			},
+			{
+				"title": "技术部门",
+				"isFolder": true,
+				"children" :[
+					{
+						"title": "技术部门1",
+						"isFolder": true
+					},
+					{
+						"title": "技术部门2",
+						"isFolder": true
+					}
+				]
+			},
+			{
+				"title": "科达-苏州用户域",
+				"addClass": "userDomainIco",
+				"isFolder": true,
+				"children": [
+					{
+						"title": "科达-苏州大客户部门",
+						"isFolder": true,
+						"children": [
+							{
+								"title": "科达-苏州大客户部门1",
+								"isFolder": true
+							},
+							{
+								"title": "科达-苏州大客户部门2",
+								"isFolder": true
+							}
+						]
+					},
+					{
+						"title": "科达-苏州技术部门",
+						"isFolder": true,
+						"children" :[
+							{
+								"title": "科达-苏州技术部门1",
+								"isFolder": true
+							},
+							{
+								"title": "科达-苏州技术部门2",
+								"isFolder": true
+							}
+						]
+					}
+				]
+			},{
+				"title": "科达-苏州用户域",
+				"addClass": "userDomainIco",
+				"isFolder": true,
+				"children": [
+					{
+						"title": "科达-苏州大客户部门",
+						"isFolder": true,
+						"children": [
+							{
+								"title": "科达-苏州大客户部门1",
+								"isFolder": true
+							},
+							{
+								"title": "科达-苏州大客户部门2",
+								"isFolder": true
+							}
+						]
+					},
+					{
+						"title": "科达-苏州技术部门",
+						"isFolder": true,
+						"children" :[
+							{
+								"title": "科达-苏州技术部门1",
+								"isFolder": true
+							},
+							{
+								"title": "科达-苏州技术部门2",
+								"isFolder": true
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+	
+]

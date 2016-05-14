@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>blank</title>
+		<meta name="author" content="feng_Pc" />
+		<style type="text/css">
+			div {
+				border: 1px solid black;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>
+			<div id='div22'>
+				<p>
+					Hello world 2
+				</p>
+			</div>
+			<div id='div2'>
+				<div id='div3'>
+					<div id='div4'>
+						<p id='p1'>
+							Hello world.
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div>
+			经测试 FireFox, Opera, Chrome, Safari, IE(>=9) 都支持DOM 标准的事件模型（Capture， bubble）
+			<br>
+			IE(<=8) 只支持bubble事件模型<br>
+			假如同一个元素的同一个事件类型（click）注册多个监听器，listener的被调用顺序和他们注册的顺序一致。
+		</div>
+		<script type="text/javascript">
+			(function() {
+				function get(id) {
+					return document.getElementById(id);
+				}
+
+				function addListener(element, event, listener, useCapture) {
+					if (element.addEventListener) {
+						element.addEventListener(event, listener, useCapture);
+					} else if (element.attachEvent) {
+						element.attachEvent('on' + event, listener);
+					} else if (element.setAttribute) {
+						element.setAttribute('on' + event, 'listener');
+					}
+				}
+
+				function removeListener(element, event, listener, useCapture) {
+					if (element.removeEventListener) {
+						element.removeEventListener(event, listener, useCapture);
+					} else if (element.dettachEvent) {
+						element.dettachEvent('on' + event, listener);
+					} else if (element.removeAttribute) {
+						element.removeAttribute('on' + event);
+					}
+				}
+
+				function preventDefault(event) {
+					if (event || event.preventDefault) {
+						event.preventDefault();
+					} else {
+						window.event.returnValue = false;
+					}
+				}
+				
+				function stopPropagation(event) {
+					if (event || event.stopPropagation) {
+						event.stopPropagation();
+					} else {
+						window.event.cancelBubble = true;
+					}
+				}
+
+				var div1 = get('div1');
+				var div2 = get('div2');
+				var div22 = get('div22');
+				var div3 = get('div3');
+				var div4 = get('div4');
+				var p = get('p1');
+
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #f00');
+				}, true);
+				
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #ff0');
+				}, true);
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #f0f');
+				}, true);
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #0ff');
+				}, true);
+
+				addListener(div2, 'click', function() {
+					document.getElementById('div2').setAttribute('style', 'border:1px solid blue');
+				}, true);
+
+				addListener(div3, 'click', function() {
+					document.getElementById('div3').setAttribute('style', 'border:1px solid red');
+				}, true);
+
+				addListener(div22, 'click', function() {
+					document.getElementById('div22').setAttribute('style', 'border:1px solid blue');
+				}, true);
+
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #f00');
+				}, false);
+				
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #ff0');
+				}, false);
+				
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #f0f');
+				}, false);
+				
+				addListener(div1, 'click', function() {
+					div1.setAttribute('style', 'border:1px solid #0ff');
+				}, false);
+
+				addListener(div2, 'click', function() {
+					document.getElementById('div2').setAttribute('style', 'border:1px solid gray');
+				}, false);
+
+			})();
+		</script>
+	</body>
+</html>
+

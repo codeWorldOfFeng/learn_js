@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>blank</title>
+		<meta name="author" content="feng_Pc" />
+	</head>
+	<body>
+		<script type="text/javascript">
+			function protoTree(obj) {
+				var result = new Array(0);
+				var info = "[";
+				if ( obj instanceof Object) {
+					for ( obj = Object.getPrototypeOf(obj); obj; obj = Object.getPrototypeOf(obj)) {
+						result.unshift(obj);
+						info += "%o, ";
+					}
+				}
+				if (result.length) {
+					info = info.substring(0, info.length - 2) + ']';
+				} else {
+					info = info + ']';
+				}
+
+				result.unshift(info);
+				console.log.apply(console, result);
+			}
+
+			console.info(Object);
+			console.info(document);
+			protoTree(document);
+		</script>
+	</body>
+</html>
+

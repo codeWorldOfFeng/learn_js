@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>New Web Project</title>
+		<style type="text/css">
+			textarea {
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>New Web Project Page</h1>
+		<textarea id='src' style="width:40%;height: 150px;margin-right: 1%"> </textarea>
+		<textarea id='dst' style="width:40%;height: 150px;"> </textarea><br>		
+		<input type="text" id="regExp" placeholder="RegExp" style="width: 20%" /><br>
+		<input type="button" id="match" value="String.prototype.match()" />
+		<input type="button" id="exec" value="RegExp.prototype.exec()" />
+		<br>
+	</body>
+	<script src="jsLib/jquery-1.12.1.js"></script>
+	<script src="jsLib/autocomplete/jquery.autocomplete.min.js"></script>
+	<script charset="utf-8">
+			
+		var dstDom=document.getElementById("dst");
+		var $dstDom=$('#dst');
+		function filterRegExpOptions(options) {
+			var optionCanUse = ['i', 'g', 'm'], result = '';
+			if ( typeof options === 'string') {
+				optionCanUse.forEach(function(data, index, array) {
+					if (options.indexOf(data) > -1) {
+						result += data;
+					}
+				});
+			}
+			return result;
+		}
+
+		function getRegExp() {
+			var regExp = $("#regExp").val();
+			regExp = regExp.match(/\/(.+)\/(\w*)/i);
+			regExp = new RegExp(regExp[1], filterRegExpOptions(regExp[2]));
+			return regExp;
+		}
+
+
+		$("#match").click(function() {
+			var src = $("#src").val(), dst = '';
+			var matchResult = src.match(getRegExp());
+			if (matchResult) {
+				matchResult.forEach(function(data, index, array) {
+					dst += data + '\n';
+				});
+			}
+			$('#dst').val(dst);
+		});
+		
+		$("#exec").click(function(){
+			var dst='';
+			var matchResult=getRegExp().exec($("#src").val());
+			if (matchResult) {
+				matchResult.forEach(function(data, index, array) {
+					dst += data + '\n';
+				});
+			}
+			$('#dst').val(matchResult);
+		});
+	</script>
+</html>

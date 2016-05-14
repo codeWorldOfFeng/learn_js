@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>blank</title>
+		<meta name="author" content="feng_Pc" />
+		<script type="text/javascript" src="../feng.learn.utils/AppUtils.js"></script>
+		<style type="text/css">
+			textarea{
+				width : 200px;
+				height : 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<textarea>
+				Hello World!	
+			</textarea>
+		</div>
+		<script type="text/javascript">
+			(function() {
+				var utils=feng.utils;
+				var text=document.getElementsByTagName('textarea')[0];
+				utils.event.addListener(text, 'select', function(){
+					
+					console.info(arguemnts);
+				});
+			})();
+		</script>
+	</body>
+</html>
+

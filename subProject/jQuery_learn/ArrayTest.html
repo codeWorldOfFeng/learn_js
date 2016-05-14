@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ArrayTest</title>
+		<meta name="author" content="feng_Pc" />
+		<!-- Date: 2016-03-14 -->
+	</head>
+	<body>
+		<script type="text/javascript">
+			var array = [1, 5, 10, 12, '55d', undefined, 18, 22, 3000, 500, null, false];
+			console.info(array);
+			console.info(array.sort());
+			console.info(array.reverse());
+			var s2b = function() {
+				try {
+					return arguments[0]-arguments[1]; //小到大
+				} catch(e) {
+					console.info(e);
+				}
+
+			};
+			array.sort(s2b);
+			console.info(array);
+			var s2b2 = function() { //大到小
+				return arguments[1] - arguments[0];
+			};
+			array.sort(s2b2);
+			console.info(array);
+			/*
+			console.info(+false); //0
+			console.info(+undefined); //NaN
+			console.info(+null); //0
+			console.info(0-NaN); //NaN
+			*/
+			var array2=array.concat(1, [2, 4], undefined); //array不变 array2=array1+新内容
+			console.info(array); 
+			console.info(array2);
+			
+			var array3=array.slice(0,3); 
+			console.info(array);
+			console.info(array3);
+			
+			var array4=array.splice(1, 1, 8888888, 'dfdfdfd');
+			console.info(array);
+			console.info(array4);
+			
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,24 @@
+#tree  ul li{
+	background: none;
+}
+#tree  span.dynatree-expander{
+	background: rgba(0, 0, 0, 0) url("../images/main_ext.png?t=5.0.0.0.2214351037") repeat scroll -58px -867px;
+}
+
+#tree  .dynatree-expanded span.dynatree-expander{
+	background-position: 1px -867px;
+} 
+
+#tree  span.dynatree-icon{
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    width: 0;
+}
+
+#tree  span.dynatree-connector{
+	background: none;
+}
+
+#tree  .userDomainIco .dynatree-icon{
+	background: rgba(0, 0, 0, 0) url("../images/meeting-all.png?t=5.0.0.0.2214351037") repeat scroll -30px -1450px;
+	width: 16px;
+}
