@@ -5,7 +5,7 @@
 $(function() {
 	$("#tree").dynatree({
 		initAjax : {
-			url : "js/data.json"
+			url : "js/depts.json"
 		}
 	});
 
